@@ -14,8 +14,12 @@ var sub = new Submarine();
 //var loser = bingo.FindLoser();
 //Display(loser);
 
-var vents = new HydrothermalVents();
-Display(vents.VentCount());
+//var vents = new HydrothermalVents();
+//Display(vents.VentCount());
+
+var fishes = new LanternFishSim();
+fishes.GoToDay(256);
+Display(fishes.Fishes);
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");
