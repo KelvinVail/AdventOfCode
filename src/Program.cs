@@ -17,9 +17,12 @@ var sub = new Submarine();
 //var vents = new HydrothermalVents();
 //Display(vents.VentCount());
 
-var fishes = new LanternFishSim();
-fishes.GoToDay(256);
-Display(fishes.Fishes);
+//var fishes = new LanternFishSim();
+//fishes.GoToDay(256);
+//Display(fishes.Fishes);
+
+var displays = new SevenSegmentDisplays();
+Display(displays.DisplayTotal());
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");
