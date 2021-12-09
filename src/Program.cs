@@ -21,8 +21,12 @@ var sub = new Submarine();
 //fishes.GoToDay(256);
 //Display(fishes.Fishes);
 
-var displays = new SevenSegmentDisplays();
-Display(displays.DisplayTotal());
+//var displays = new SevenSegmentDisplays();
+//Display(displays.DisplayTotal());
+
+var heightMap = new HeightMap();
+Display(heightMap.SumOfLowPoints());
+Display(heightMap.LargestBasinSizes());
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");

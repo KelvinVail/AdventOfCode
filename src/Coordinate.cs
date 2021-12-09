@@ -2,15 +2,15 @@
 
 internal class Coordinate : IEquatable<Coordinate>
 {
-    public Coordinate(int x, int y)
+    public Coordinate(int row, int column)
     {
-        X = x;
-        Y = y;
+        Row = row;
+        Column = column;
     }
 
-    public int X { get; }
+    public int Row { get; }
 
-    public int Y { get; }
+    public int Column { get; }
 
     public bool Equals(Coordinate? other)
     {
@@ -24,7 +24,7 @@ internal class Coordinate : IEquatable<Coordinate>
             return true;
         }
 
-        return X == other.X && Y == other.Y;
+        return Row == other.Row && Column == other.Column;
     }
 
     public override bool Equals(object? obj)
@@ -47,7 +47,7 @@ internal class Coordinate : IEquatable<Coordinate>
         return Equals((Coordinate)obj);
     }
 
-    public override int GetHashCode() => HashCode.Combine(X, Y);
+    public override int GetHashCode() => HashCode.Combine(Row, Column);
 
-    public override string ToString() => $"{X},{Y}";
+    public override string ToString() => $"{Row},{Column}";
 }

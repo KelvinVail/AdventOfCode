@@ -11,4 +11,7 @@ internal abstract class Puzzle
     }
 
     protected string[] Input { get; }
+
+    protected static int ToInt(string c) =>
+        int.Parse(c, NumberStyles.Integer, new NumberFormatInfo());
 }
