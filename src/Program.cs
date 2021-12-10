@@ -24,9 +24,13 @@ var sub = new Submarine();
 //var displays = new SevenSegmentDisplays();
 //Display(displays.DisplayTotal());
 
-var heightMap = new HeightMap();
-Display(heightMap.SumOfLowPoints());
-Display(heightMap.LargestBasinSizes());
+//var heightMap = new HeightMap();
+//Display(heightMap.SumOfLowPoints());
+//Display(heightMap.LargestBasinSizes());
+
+var syntaxChecker = new SyntaxChecker();
+Display(syntaxChecker.Score());
+Display(syntaxChecker.GetMiddleScore());
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");

@@ -2,7 +2,7 @@
 
 namespace AdventOfCode;
 
-internal abstract class Puzzle
+public abstract class Puzzle
 {
     protected Puzzle(int day, bool test = false)
     {
