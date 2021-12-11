@@ -28,9 +28,15 @@ var sub = new Submarine();
 //Display(heightMap.SumOfLowPoints());
 //Display(heightMap.LargestBasinSizes());
 
-var syntaxChecker = new SyntaxChecker();
-Display(syntaxChecker.Score());
-Display(syntaxChecker.GetMiddleScore());
+//var syntaxChecker = new SyntaxChecker();
+//Display(syntaxChecker.Score());
+//Display(syntaxChecker.GetMiddleScore());
+
+var dumbos = new DumboOctopuses();
+for (int i = 0; i < 100; i++)
+    dumbos.Iterate();
+Display(dumbos.TotalFlashes);
+Display(dumbos.AllFlashOnIteration());
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");
