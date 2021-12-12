@@ -32,11 +32,14 @@ var sub = new Submarine();
 //Display(syntaxChecker.Score());
 //Display(syntaxChecker.GetMiddleScore());
 
-var dumbos = new DumboOctopuses();
-for (int i = 0; i < 100; i++)
-    dumbos.Iterate();
-Display(dumbos.TotalFlashes);
-Display(dumbos.AllFlashOnIteration());
+//var dumbos = new DumboOctopuses();
+//for (int i = 0; i < 100; i++)
+//    dumbos.Iterate();
+//Display(dumbos.TotalFlashes);
+//Display(dumbos.AllFlashOnIteration());
+
+var caves = new CaveSystem();
+Display(caves.TotalRoutes());
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");
