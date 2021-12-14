@@ -38,8 +38,12 @@ var sub = new Submarine();
 //Display(dumbos.TotalFlashes);
 //Display(dumbos.AllFlashOnIteration());
 
-var caves = new CaveSystem();
-Display(caves.TotalRoutes());
+//var caves = new CaveSystem();
+//Display(caves.TotalRoutes());
+
+var paper = new TransparentPaper();
+paper.MakeAllFolds();
+paper.DisplayCode();
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");

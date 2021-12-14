@@ -8,9 +8,9 @@ public class Coordinate : IEquatable<Coordinate>
         Column = column;
     }
 
-    public int Row { get; }
+    public int Row { get; private set; }
 
-    public int Column { get; }
+    public int Column { get; private set; }
 
     public Coordinate North() =>
         new (Row - 1, Column);
@@ -36,17 +36,25 @@ public class Coordinate : IEquatable<Coordinate>
     public Coordinate NorthWest() =>
         new (Row - 1, Column - 1);
 
+    public void FoldRow(int i)
+    {
+        if (Row > i)
+            Row -= (Row - i) * 2;
+    }
+
+    public void FoldColumn(int i)
+    {
+        if (Column > i)
+            Column -= (Column - i) * 2;
+    }
+
     public bool Equals(Coordinate? other)
     {
         if (ReferenceEquals(null, other))
-        {
             return false;
-        }
 
         if (ReferenceEquals(this, other))
-        {
             return true;
-        }
 
         return Row == other.Row && Column == other.Column;
     }
@@ -54,19 +62,13 @@ public class Coordinate : IEquatable<Coordinate>
     public override bool Equals(object? obj)
     {
         if (ReferenceEquals(null, obj))
-        {
             return false;
-        }
 
         if (ReferenceEquals(this, obj))
-        {
             return true;
-        }
 
-        if (obj.GetType() != this.GetType())
-        {
+        if (obj.GetType() != GetType())
             return false;
-        }
 
         return Equals((Coordinate)obj);
     }

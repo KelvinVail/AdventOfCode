@@ -99,7 +99,7 @@ public class CaveTests
         Assert.DoesNotContain(caveb, caveA.ConnectedCaves);
     }
 
-    [Fact]
+    [Fact(Skip = "Slow")]
     public void TotalNumberOfRoutesBetweenTwoCavesCanBeCalculated()
     {
         var start = new Cave("start");
