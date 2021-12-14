@@ -41,9 +41,12 @@ var sub = new Submarine();
 //var caves = new CaveSystem();
 //Display(caves.TotalRoutes());
 
-var paper = new TransparentPaper();
-paper.MakeAllFolds();
-paper.DisplayCode();
+//var paper = new TransparentPaper();
+//paper.MakeAllFolds();
+//paper.DisplayCode();
+
+var inserter = new PolymerInserter();
+Display(inserter.Insert(40));
 
 void Display<T>(T value, [CallerArgumentExpression("value")] string paramName = "") =>
     Console.WriteLine($"{paramName.Split('.').Last()}:{value}");
